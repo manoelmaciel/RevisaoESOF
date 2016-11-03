@@ -22,20 +22,13 @@ public class Fila {
 		} else {
 			proximo = verificaIdoso();
 			if (proximo == null) { 
-		
-				// proximo = pessoas.get(0);
-			
-			// } else {
 				proximo = verificaGravida();
-				if (proximo == null)
-					// proximo = pessoas.get(0);
+				if (proximo == null)					
 					proximo = pessoas.get(0);
 			}
 			
-		}
-		
-		return proximo;
-		
+		}		
+		return proximo;		
 	}
 	
 	public Pessoa verificaGravida(){
