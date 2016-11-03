@@ -1,14 +1,14 @@
 package v1;
 
-import static org.junit.Assert.*;
 import junit.framework.Assert;
 
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public class Testes {
 
-	@Test
-	public void exemplo() {
+	@Test // Teste 1
+	public void testeExemplo() {
 		Pessoa p1 = new Pessoa("Fulano", false, false);
 		Pessoa p2 = new Pessoa("Ciclana", false, false);
 		Pessoa p3 = new Pessoa("Beltrana", false, false);
@@ -36,10 +36,10 @@ public class Testes {
 		f.removePessoa(proximo);
 	}
 
-	@Test
-	public void gravida() {
+	@Test // Teste 2
+	public void testeGravida() {
 		Pessoa p1 = new Pessoa("Fulano1", false, false);
-		Pessoa p2 = new Pessoa("CiclanaGravida", true, false);
+		Pessoa p2 = new Pessoa("CiclanaGravida1", true, false);
 		Pessoa p3 = new Pessoa("Beltrana1", false, false);
 		
 		Fila f = new Fila();
@@ -50,7 +50,7 @@ public class Testes {
 		
 		Pessoa proximo = f.proximoFila();
 		
-		Assert.assertEquals(proximo.getNome(), "CiclanaGravida");
+		Assert.assertEquals(proximo.getNome(), "CiclanaGravida1");
 		
 		f.removePessoa(proximo);
 		proximo = f.proximoFila();
@@ -66,11 +66,11 @@ public class Testes {
 		
 	}
 
-	@Test
-	public void testeProblema() {
+	@Test // Teste 3
+	public void testeIdoso() {
 		Pessoa p1 = new Pessoa("Fulano2", false, false);
-		Pessoa p2 = new Pessoa("Ciclana2", false, false);
-		Pessoa p3 = new Pessoa("Beltrana2", false, false);
+		Pessoa p2 = new Pessoa("CiclanaGravida2", true, false);
+		Pessoa p3 = new Pessoa("BeltranoIdoso2", false, true);
 		
 		Fila f = new Fila();
 		
@@ -80,17 +80,17 @@ public class Testes {
 		
 		Pessoa proximo = f.proximoFila();
 		
-		Assert.assertEquals(proximo.getNome(), "Fulano2");
+		Assert.assertEquals(proximo.getNome(), "BeltranoIdoso2");
 		
 		f.removePessoa(proximo);
 		proximo = f.proximoFila();
 			
-		Assert.assertEquals(proximo.getNome(), "Ciclana2");
+		Assert.assertEquals(proximo.getNome(), "CiclanaGravida2");
 		
 		f.removePessoa(proximo);
 		proximo = f.proximoFila();
 		
-		Assert.assertEquals(proximo.getNome(), "Beltrana2");
+		Assert.assertEquals(proximo.getNome(), "Fulano2");
 		
 		f.removePessoa(proximo);
 		

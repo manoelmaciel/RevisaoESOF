@@ -17,12 +17,25 @@ public class Fila {
 	public Pessoa proximoFila(){
 		Pessoa proximo = null;
 		
-		proximo = verificaGravida();
+		if (pessoas.isEmpty()) {
+			System.out.println("Fila vazia ... !");
+		} else {
+			proximo = verificaIdoso();
+			if (proximo == null) { 
 		
-		if(proximo == null && !pessoas.isEmpty())
-			proximo = pessoas.get(0);
+				// proximo = pessoas.get(0);
+			
+			// } else {
+				proximo = verificaGravida();
+				if (proximo == null)
+					// proximo = pessoas.get(0);
+					proximo = pessoas.get(0);
+			}
+			
+		}
 		
 		return proximo;
+		
 	}
 	
 	public Pessoa verificaGravida(){
