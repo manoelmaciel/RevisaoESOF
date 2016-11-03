@@ -31,6 +31,4 @@ public class Pessoa {
 		this.idoso = idoso;
 	}
 	
-	
-	
 }

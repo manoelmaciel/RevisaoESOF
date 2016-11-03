@@ -19,7 +19,7 @@ public class Fila {
 		
 		proximo = verificaGravida();
 		
-		if(proximo == null)
+		if(proximo == null && !pessoas.isEmpty())
 			proximo = pessoas.get(0);
 		
 		return proximo;
